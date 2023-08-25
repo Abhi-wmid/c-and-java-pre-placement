@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int count;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &count);
+
+    int greatest_prime = -1;
+    int num;
+
+    for (int i = 0; i < count; ++i) {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &num);
+
+        int is_prime = 1;
+        
+        if (num <= 1) {
+            is_prime = 0;
+        } else {
+            for (int j = 2; j * j <= num; ++j) {
+                if (num % j == 0) {
+                    is_prime = 0;
+                    break;
+                }
+            }
+        }
+        
+        if (is_prime) {
+            if (num > greatest_prime) {
+                greatest_prime = num;
+            }
+        }
+    }
+
+    if (greatest_prime != -1) {
+        printf("The greatest prime number among the given numbers is: %d\n", greatest_prime);
+    } else {
+        printf("There are no prime numbers among the given numbers.\n");
+    }
+
+    return 0;
+}
