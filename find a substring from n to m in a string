@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int n, m;
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    printf("Enter the starting position (n): ");
+    scanf("%d", &n);
+
+    printf("Enter the ending position (m): ");
+    scanf("%d", &m);
+
+    int length = strlen(str);
+
+    if (n >= 1 && n <= length && m >= n && m <= length) {
+        char substring[100];
+        int substringIndex = 0;
+
+        for (int i = n - 1; i < m; ++i) {
+            substring[substringIndex] = str[i];
+            ++substringIndex;
+        }
+        substring[substringIndex] = '\0'; // Adding null terminator to create a valid string
+
+        printf("Substring from position %d to %d: %s\n", n, m, substring);
+    } else {
+        printf("Invalid values of n and m. Please enter valid positions.\n");
+    }
+
+    return 0;
+}
