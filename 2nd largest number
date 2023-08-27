@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int size,l,sl;
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+    
+      int arr[size];
+    printf("Enter elements:\n", size);
+    for (int i = 0; i < size; i++) {
+        scanf("%d", &arr[i]);
+    }
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > l) {
+            sl = l;
+            l = arr[i];
+        } else if (arr[i] > sl && arr[i] != l) {
+            sl = arr[i];
+        }
+    }
+
+    printf("The second largest element is: %d\n", sl);
+}
