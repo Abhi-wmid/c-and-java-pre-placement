@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    int length = strlen(str);
+    int sumOdd = 0, sumEven = 0;
+
+    for (int i = 0; i < length; ++i) {
+        if (i % 2 == 0) {
+            sumEven += str[i];
+        } else {
+            sumOdd += str[i];
+        }
+    }
+
+    printf("Sum of ASCII values of characters at even positions: %d\n", sumEven);
+    printf("Sum of ASCII values of characters at odd positions: %d\n", sumOdd);
+
+    return 0;
+}
